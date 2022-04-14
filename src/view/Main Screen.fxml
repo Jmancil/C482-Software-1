@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="716.0" prefWidth="980.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainScreen">
+   <children>
+      <GridPane layoutX="93.0" layoutY="95.0" prefHeight="527.0" prefWidth="794.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="148.0" minHeight="0.0" prefHeight="0.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="397.0" minHeight="10.0" prefHeight="397.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="86.0" minHeight="0.0" prefHeight="0.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <StackPane prefHeight="150.0" prefWidth="244.0">
+               <children>
+                  <Label text="Parts" textAlignment="CENTER" />
+               </children>
+            </StackPane>
+            <StackPane prefHeight="150.0" prefWidth="200.0" GridPane.rowIndex="1">
+               <children>
+                  <TableView fx:id="partTable" prefHeight="200.0" prefWidth="200.0">
+                    <columns>
+                      <TableColumn fx:id="partID" prefWidth="75.0" text="Part ID" />
+                      <TableColumn fx:id="partName" prefWidth="75.0" text="Part Name" />
+                        <TableColumn fx:id="partInventoryLevel" prefWidth="109.0" text="Inventory Level" />
+                        <TableColumn fx:id="partPriceCost" prefWidth="125.0" text="Price / Cost Per Unit" />
+                    </columns>
+                  </TableView>
+               </children>
+            </StackPane>
+            <StackPane prefHeight="150.0" prefWidth="200.0" GridPane.columnIndex="1">
+               <children>
+                  <Label text="Products" />
+               </children>
+            </StackPane>
+            <StackPane prefHeight="150.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <children>
+                  <TableView fx:id="productTable" prefHeight="200.0" prefWidth="200.0">
+                    <columns>
+                      <TableColumn fx:id="productID" prefWidth="75.0" text="Product ID" />
+                      <TableColumn fx:id="productName" prefWidth="87.0" text="Product Name" />
+                        <TableColumn fx:id="productInventoryLevel" prefWidth="99.0" text="Inventory Level" />
+                        <TableColumn fx:id="productPriceCost" prefWidth="126.0" text="Price / Cost Per Unit" />
+                    </columns>
+                  </TableView>
+               </children>
+            </StackPane>
+            <StackPane prefHeight="150.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <children>
+                  <ButtonBar>
+                     <buttons>
+                        <ButtonBar>
+                           <buttons>
+                              <ButtonBar>
+                                 <buttons>
+                                    <Button fx:id="productAdd" mnemonicParsing="false" onAction="#clickProductAdd" text="Add" />
+                                 </buttons>
+                              </ButtonBar>
+                           </buttons>
+                        </ButtonBar>
+                        <Button fx:id="ProductModify" mnemonicParsing="false" onAction="#clickProductModify" text="Modify" />
+                        <Button fx:id="productDelete" mnemonicParsing="false" onAction="#clickProductDelete" text="Delete" />
+                     </buttons>
+                  </ButtonBar>
+               </children>
+            </StackPane>
+            <StackPane prefHeight="150.0" prefWidth="200.0" GridPane.rowIndex="2">
+               <children>
+                  <SplitPane>
+                     <items>
+                        <StackPane prefHeight="150.0" prefWidth="200.0">
+                           <children>
+                              <ButtonBar>
+                                 <buttons>
+                                    <ButtonBar>
+                                       <buttons>
+                                          <ButtonBar>
+                                             <buttons>
+                                                <Button fx:id="partAdd" mnemonicParsing="false" onAction="#clickPartAdd" text="Add" />
+                                             </buttons>
+                                          </ButtonBar>
+                                       </buttons>
+                                    </ButtonBar>
+                                    <Button fx:id="partModify" mnemonicParsing="false" onAction="#clickPartModify" text="Modify" />
+                                    <Button fx:id="partDelete" mnemonicParsing="false" onAction="#clickPartDelete" text="Delete" />
+                                 </buttons>
+                              </ButtonBar>
+                           </children>
+                        </StackPane>
+                     </items>
+                  </SplitPane>
+               </children>
+            </StackPane>
+         </children>
+      </GridPane>
+      <Button fx:id="exit" layoutX="815.0" layoutY="635.0" mnemonicParsing="false" onAction="#clickExit" text="Exit" />
+      <TextField fx:id="searchParts" layoutX="93.0" layoutY="623.0" onAction="#enterSearchPart" promptText="Search by Part ID or Name" />
+      <TextField fx:id="searchProducts" layoutX="490.0" layoutY="623.0" onAction="#enterSearchProduct" promptText="Search by Product ID or Name" />
+   </children>
+</AnchorPane>
